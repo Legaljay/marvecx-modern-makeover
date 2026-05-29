@@ -51,27 +51,44 @@ export function Team({ heading = true, limit }: { heading?: boolean; limit?: num
         )}
 
         <div className="grid grid-cols-2 gap-5 sm:gap-8 md:grid-cols-3 lg:grid-cols-4">
-          {people.map((p) => (
-            <figure key={p.name} className="group">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/5 bg-surface">
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-                <figcaption className="absolute bottom-3 left-4 right-4">
-                  <h4 className="font-display text-sm font-bold text-white sm:text-base">
-                    {p.name}
-                  </h4>
-                  <p className="mt-0.5 text-[10px] font-bold uppercase tracking-widest text-primary">
-                    {p.role}
-                  </p>
-                </figcaption>
-              </div>
-            </figure>
-          ))}
+          {people.map((p) => {
+            const initials = p.name
+              .split(" ")
+              .map((w) => w[0])
+              .slice(0, 2)
+              .join("");
+            return (
+              <figure key={p.name} className="group">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/5 bg-gradient-to-br from-surface to-background">
+                  {/* Initials fallback layer */}
+                  <div className="absolute inset-0 grid place-items-center">
+                    <span className="font-display text-6xl font-extrabold text-gradient-brand opacity-70">
+                      {initials}
+                    </span>
+                  </div>
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    }}
+                    className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+                  <figcaption className="absolute bottom-3 left-4 right-4">
+                    <h4 className="font-display text-sm font-bold text-white sm:text-base">
+                      {p.name}
+                    </h4>
+                    <p className="mt-0.5 text-[10px] font-bold uppercase tracking-widest text-primary">
+                      {p.role}
+                    </p>
+                  </figcaption>
+                </div>
+              </figure>
+            );
+          })}
         </div>
       </div>
     </section>
