@@ -1,29 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PageShell } from "@/components/site/PageShell";
+import { Hero } from "@/components/site/Hero";
+import { MissionVision } from "@/components/site/MissionVision";
+import { Sectors } from "@/components/site/Sectors";
+import { Events } from "@/components/site/Events";
+import { Team } from "@/components/site/Team";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "MARVECX — African Aerospace, Research & Education" },
+      {
+        name: "description",
+        content:
+          "MARVECX is a forward-looking African aerospace company advancing design, research, and education for a sustainable and spacefaring future.",
+      },
+      { property: "og:title", content: "MARVECX — African Aerospace" },
+      {
+        property: "og:description",
+        content:
+          "Engineering the multiplanetary future from Africa. Design, research, education, and the ISTC convention series.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <PageShell>
+      <Hero />
+      <MissionVision />
+      <Sectors />
+      <Events />
+      <Team limit={4} />
+    </PageShell>
   );
 }
