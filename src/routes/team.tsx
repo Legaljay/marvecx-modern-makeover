@@ -17,6 +17,26 @@ export const Route = createFileRoute("/team")({
         content: "Leadership and crew behind MARVECX Aerospace.",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "MARVECX",
+          alternateName: "MARVECX Aerospace",
+          url: "https://marvecx-makeover-ai.lovable.app",
+          member: [
+            { "@type": "Person", name: "Marvelours Ayinde", jobTitle: "Founder & CEO" },
+            { "@type": "Person", name: "Joshua Egbunu", jobTitle: "Tech & Project Lead" },
+            { "@type": "Person", name: "Francis Adedeji", jobTitle: "Research Lead" },
+            { "@type": "Person", name: "Okikijesu Olajide", jobTitle: "Assistant Tech Lead" },
+            { "@type": "Person", name: "Ayobami Adesina", jobTitle: "IT Lead" },
+            { "@type": "Person", name: "Princess Ariel", jobTitle: "Assistant IT & Program Coordinator" },
+          ],
+        }),
+      },
+    ],
   }),
   component: TeamPage,
 });

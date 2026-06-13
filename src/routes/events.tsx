@@ -17,6 +17,63 @@ export const Route = createFileRoute("/events")({
         content: "Three editions of ISTC connecting Africa with the global space community.",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "ISTC Series — International Space Technology Convention",
+          description:
+            "Three editions of ISTC connecting Africa with the global space community — 2023, 2024, and the ongoing 2025 Knowledge Series themed Emergence.",
+          url: "https://marvecx-makeover-ai.lovable.app/events",
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@type": "Event",
+                  name: "ISTC 2023",
+                  description:
+                    "The inaugural edition, bringing together pioneering voices in space science and technology to connect Africa with the global space community.",
+                  startDate: "2023-06-01",
+                  eventStatus: "https://schema.org/EventScheduled",
+                  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                  "@type": "Event",
+                  name: "ISTC 2024",
+                  description:
+                    "Expanding the conversation, strengthening international partnerships, and spotlighting advancements in aerospace, sustainability, and STEM.",
+                  startDate: "2024-11-01",
+                  eventStatus: "https://schema.org/EventScheduled",
+                  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                  "@type": "Event",
+                  name: "ISTC 2025 — Emergence",
+                  description:
+                    "Exploring transformative ideas in space exploration, planetary science, robotics, aviation, and next-generation technologies.",
+                  startDate: "2025-01-01",
+                  eventStatus: "https://schema.org/EventScheduled",
+                  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+                },
+              },
+            ],
+          },
+        }),
+      },
+    ],
   }),
   component: EventsPage,
 });
