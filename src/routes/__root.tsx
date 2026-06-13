@@ -97,6 +97,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "MARVECX",
+          alternateName: "MARVECX Aerospace",
+          url: "https://marvecx-makeover-ai.lovable.app",
+          description:
+            "MARVECX advances aerospace design, research, and education from Africa for a sustainable and spacefaring future.",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "MARVECX — African Aerospace",
+          url: "https://marvecx-makeover-ai.lovable.app",
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
