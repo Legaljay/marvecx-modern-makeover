@@ -25,6 +25,10 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Mission, vision, sectors, and values of MARVECX Aerospace.",
       },
+      { property: "og:url", content: "https://marvecx-makeover-ai.lovable.app/about" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://marvecx-makeover-ai.lovable.app/about" },
     ],
   }),
   component: AboutPage,

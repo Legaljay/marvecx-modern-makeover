@@ -16,6 +16,10 @@ export const Route = createFileRoute("/team")({
         property: "og:description",
         content: "Leadership and crew behind MARVECX Aerospace.",
       },
+      { property: "og:url", content: "https://marvecx-makeover-ai.lovable.app/team" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://marvecx-makeover-ai.lovable.app/team" },
     ],
     scripts: [
       {
