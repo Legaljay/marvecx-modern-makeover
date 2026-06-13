@@ -3,6 +3,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  { to: "/education/guide", label: "Education" },
   { to: "/events", label: "Events" },
   { to: "/team", label: "Team" },
 ] as const;
