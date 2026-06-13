@@ -21,6 +21,12 @@ export const Route = createFileRoute("/")({
         content:
           "Engineering the multiplanetary future from Africa. Design, research, education, and the ISTC convention series.",
       },
+      { property: "og:url", content: "https://marvecx-makeover-ai.lovable.app/" },
+      { property: "og:image", content: "https://marvecx-makeover-ai.lovable.app/og-image.jpg" },
+      { property: "twitter:image", content: "https://marvecx-makeover-ai.lovable.app/og-image.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://marvecx-makeover-ai.lovable.app/" },
     ],
   }),
   component: Index,

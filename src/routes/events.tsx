@@ -16,6 +16,10 @@ export const Route = createFileRoute("/events")({
         property: "og:description",
         content: "Three editions of ISTC connecting Africa with the global space community.",
       },
+      { property: "og:url", content: "https://marvecx-makeover-ai.lovable.app/events" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://marvecx-makeover-ai.lovable.app/events" },
     ],
     scripts: [
       {
