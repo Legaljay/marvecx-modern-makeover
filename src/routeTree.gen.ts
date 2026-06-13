@@ -13,6 +13,7 @@ import { Route as TeamRouteImport } from './routes/team'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EducationGuideRouteImport } from './routes/education.guide'
 
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
@@ -34,18 +35,25 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EducationGuideRoute = EducationGuideRouteImport.update({
+  id: '/education/guide',
+  path: '/education/guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/events': typeof EventsRoute
   '/team': typeof TeamRoute
+  '/education/guide': typeof EducationGuideRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/events': typeof EventsRoute
   '/team': typeof TeamRoute
+  '/education/guide': typeof EducationGuideRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/events': typeof EventsRoute
   '/team': typeof TeamRoute
+  '/education/guide': typeof EducationGuideRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/events' | '/team'
+  fullPaths: '/' | '/about' | '/events' | '/team' | '/education/guide'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/events' | '/team'
-  id: '__root__' | '/' | '/about' | '/events' | '/team'
+  to: '/' | '/about' | '/events' | '/team' | '/education/guide'
+  id: '__root__' | '/' | '/about' | '/events' | '/team' | '/education/guide'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +76,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   EventsRoute: typeof EventsRoute
   TeamRoute: typeof TeamRoute
+  EducationGuideRoute: typeof EducationGuideRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +109,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/education/guide': {
+      id: '/education/guide'
+      path: '/education/guide'
+      fullPath: '/education/guide'
+      preLoaderRoute: typeof EducationGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   EventsRoute: EventsRoute,
   TeamRoute: TeamRoute,
+  EducationGuideRoute: EducationGuideRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
