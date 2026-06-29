@@ -73,12 +73,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#05070f" },
-      { title: "MARVECX — African Aerospace" },
-      {
-        name: "description",
-        content:
-          "MARVECX advances aerospace design, research, and education from Africa for a sustainable and spacefaring future.",
-      },
       { name: "author", content: "MARVECX Aerospace" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "MARVECX" },
