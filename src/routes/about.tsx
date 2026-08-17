@@ -43,7 +43,7 @@ function AboutPage() {
             About us
           </p>
           <h1 className="mt-4 font-display text-5xl font-extrabold tracking-tight sm:text-7xl">
-            An African company building <span className="text-gradient-brand">beyond Earth</span>.
+            An African company building <span className="text-primary">beyond Earth</span>.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
             MARVECX advances aerospace design, research, and education with a deep focus on
@@ -63,7 +63,7 @@ function AboutPage() {
               How we operate
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
-              Core <span className="text-gradient-brand">values</span>
+              Core <span className="text-primary">values</span>
             </h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -74,7 +74,7 @@ function AboutPage() {
               >
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-white/30">0{i + 1}</span>
-                  <span className="h-2 w-2 rounded-full bg-gradient-brand" />
+                  <span className="h-2 w-2 rounded-full bg-primary" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-bold">{v.t}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/60">{v.b}</p>
@@ -90,7 +90,7 @@ function AboutPage() {
             Roadmap
           </p>
           <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
-            Future <span className="text-gradient-brand">outlook</span>
+            Future <span className="text-primary">outlook</span>
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[

@@ -54,7 +54,7 @@ function TeamPage() {
             The crew
           </p>
           <h1 className="mt-4 font-display text-5xl font-extrabold tracking-tight sm:text-7xl">
-            Meet our <span className="text-gradient-brand">team</span>
+            Meet our <span className="text-primary">team</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
             Guided by experts across aerospace engineering, research, and technical strategy.
