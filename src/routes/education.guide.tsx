@@ -159,7 +159,7 @@ function EducationGuidePage() {
           </p>
           <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight sm:text-6xl">
             Aerospace Engineering{" "}
-            <span className="text-gradient-brand">Careers &amp; Education</span> in Africa
+            <span className="text-primary">Careers &amp; Education</span> in Africa
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
             A practical guide for students and professionals who want to build aircraft, satellites,
@@ -176,7 +176,7 @@ function EducationGuidePage() {
               Your path
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
-              From student to <span className="text-gradient-brand">space professional</span>
+              From student to <span className="text-primary">space professional</span>
             </h2>
           </div>
           <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -192,7 +192,7 @@ function EducationGuidePage() {
               >
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-white/30">0{i + 1}</span>
-                  <span className="h-2 w-2 rounded-full bg-gradient-brand" />
+                  <span className="h-2 w-2 rounded-full bg-primary" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-bold">{step.stage}</h3>
                 <p className="mt-1 text-sm font-semibold text-primary">{step.focus}</p>
@@ -211,7 +211,7 @@ function EducationGuidePage() {
               Where to study
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
-              Top <span className="text-gradient-brand">programmes</span> across Africa
+              Top <span className="text-primary">programmes</span> across Africa
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/55">
               Leading universities and institutes offering aerospace-related engineering degrees,
@@ -225,7 +225,7 @@ function EducationGuidePage() {
                 className="rounded-2xl border border-white/5 bg-surface/40 p-6 backdrop-blur-md transition-colors hover:border-white/15"
               >
                 <div className="flex items-center gap-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-gradient-brand" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-primary" />
                   <h3 className="font-display text-lg font-bold">{p.country}</h3>
                 </div>
                 <ul className="mt-4 space-y-3">
@@ -250,7 +250,7 @@ function EducationGuidePage() {
               Where it leads
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
-              Career <span className="text-gradient-brand">paths</span>
+              Career <span className="text-primary">paths</span>
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -279,7 +279,7 @@ function EducationGuidePage() {
               Get started
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
-              Resources &amp; <span className="text-gradient-brand">next steps</span>
+              Resources &amp; <span className="text-primary">next steps</span>
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
