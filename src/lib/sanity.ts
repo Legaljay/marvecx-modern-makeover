@@ -182,13 +182,27 @@ export const eventQueryOptions = (slug: string) => ({
 
 export const FALLBACK_EVENTS: EventDoc[] = [
   {
+    _id: "fallback-istc-2026",
+    title: "ISTC 2026 — Emergence",
+    slug: "istc-2026",
+    edition: "Fourth Edition",
+    theme: "Emergence",
+    status: "ongoing",
+    startDate: "2025-11-01",
+    location: "Lagos, Nigeria · Hybrid",
+    excerpt:
+      "A knowledge series exploring transformative ideas in space exploration, planetary science, robotics, aviation, and next-generation technologies.",
+    registrationUrl: "https://www.marvecx.com",
+    body: [],
+  },
+  {
     _id: "fallback-istc-2025",
     title: "ISTC 2025 — Emergence",
     slug: "istc-2025",
     edition: "Third Edition",
     theme: "Emergence",
-    status: "ongoing",
-    startDate: "2025-01-01",
+    status: "closed",
+    startDate: "2025-11-01",
     location: "Lagos, Nigeria · Hybrid",
     excerpt:
       "A knowledge series exploring transformative ideas in space exploration, planetary science, robotics, aviation, and next-generation technologies.",

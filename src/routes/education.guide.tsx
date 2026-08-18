@@ -47,6 +47,7 @@ const PROGRAMMES = [
   {
     country: "Nigeria",
     schools: [
+      "Kwara State University — Aeronautical and Astronautical Engineering",
       "University of Lagos — Systems Engineering (Aerospace focus)",
       "Covenant University — Mechanical Engineering (Aerospace option)",
       "Federal University of Technology, Akure — Engineering programmes with aviation links",

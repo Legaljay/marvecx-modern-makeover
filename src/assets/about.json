@@ -1,0 +1,125 @@
+{
+  "seo": {
+    "title": "About MARVECX Aerospace - Leading African Space Technology & Innovation Company",
+    "description": "MARVECX Aerospace is pioneering aerospace design, research, and education in Africa. Committed to sustainability and innovation, we're building Africa's future in space technology through education, research, and manufacturing excellence.",
+    "image": "https://www.marvecx.com/og_marvecx.jpg",
+    "url": "https://www.marvecx.com/about",
+    "logo": "https://www.marvecx.com/logo1121.png",
+    "type": "website",
+    "keywords": [
+      "MARVECX Aerospace",
+      "African aerospace company",
+      "space technology Africa",
+      "aerospace education Africa",
+      "sustainable aerospace innovation",
+      "African space industry",
+      "aerospace research Africa",
+      "space technology Nigeria",
+      "aerospace manufacturing Africa",
+      "STEM education aerospace",
+      "multiplanetary future",
+      "African space hub",
+      "aerospace design Africa",
+      "satellite technology Africa",
+      "space innovation Africa",
+      "aerospace engineering Africa",
+      "sustainable space development",
+      "African launch capabilities",
+      "space sector Africa",
+      "aerospace technology advancement",
+      "green aerospace engineering",
+      "African space exploration",
+      "aerospace education programs",
+      "space industry Nigeria",
+      "indigenous aerospace solutions",
+      "Marvecx",
+      "Aeronautics",
+      "Drone Technology"
+    ],
+    "openGraph": {
+      "title": "About MARVECX Aerospace - Pioneering African Space Technology",
+      "description": "Building Africa's aerospace future through innovation, education, and sustainable technology. Discover how MARVECX is positioning Africa as a major player in global space exploration.",
+      "image": "https://www.marvecx.com/og_marvecx.jpg",
+      "url": "https://www.marvecx.com/about",
+      "type": "website",
+      "siteName": "MARVECX Aerospace"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "About MARVECX Aerospace - Leading African Space Innovation",
+      "description": "Advancing aerospace design, research, and education in Africa. Building a sustainable, multiplanetary future through excellence and collaboration.",
+      "image": "https://www.marvecx.com/og_marvecx.jpg",
+      "site": "https://x.com/marvecx?t=BpFIdBmM0Aq807JFt0-fhg&s=09",
+      "creator": "@marvecx"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MARVECX Aerospace",
+      "description": "A forward-looking African company committed to advancing aerospace design, research, and education with a deep focus on sustainability and innovation.",
+      "url": "https://www.marvecx.com",
+      "logo": "https://www.marvecx.com/logo1121.png",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "NG",
+          "addressRegion": "Lagos"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Africa"
+        },
+        {
+          "@type": "Place",
+          "name": "Global"
+        }
+      ],
+      "industry": "Aerospace Technology",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "name": "employees"
+      },
+      "knowsAbout": [
+        "Aerospace Engineering",
+        "Space Technology",
+        "Sustainable Innovation",
+        "STEM Education",
+        "Aerospace Research",
+        "Satellite Technology",
+        "Launch Systems",
+        "Marvecx",
+        "Aeronautics",
+        "Drone Technology"
+      ],
+      "mission": "To develop world-class aerospace technologies, promote research for a sustainable and multiplanetary future, and empower individuals globally through education, collaboration, and innovation.",
+      "slogan": "Advancing Africa's Future in Space",
+      "department": [
+        {
+          "@type": "Organization",
+          "name": "Education Sector",
+          "description": "Focusing on training, outreach, and knowledge development across Africa and the global aerospace community."
+        },
+        {
+          "@type": "Organization",
+          "name": "Research Sector",
+          "description": "Set to launch in 2026 to drive new scientific exploration.",
+          "foundingDate": "2026"
+        },
+        {
+          "@type": "Organization",
+          "name": "Design & Manufacturing Sector",
+          "description": "Future sector focused on full-scale aerospace production and launch capability."
+        }
+      ],
+      "subjectOf": {
+        "@type": "WebPage",
+        "name": "About MARVECX Aerospace",
+        "url": "https://www.marvecx.com/about",
+        "description": "Learn about MARVECX Aerospace's mission, vision, core values, and future outlook in advancing African aerospace technology."
+      }
+    }
+  }
+}

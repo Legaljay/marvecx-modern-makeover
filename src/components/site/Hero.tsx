@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "@tanstack/react-router";
 import heroPoster from "@/assets/hero-earth.jpg";
-import heroVideo from "@/assets/hero-orbit.mp4.asset.json";
+import heroVideo from "@/assets/hero-orbit.mp4";
 import { useGsap } from "@/hooks/use-gsap";
 import { prefersReducedMotion } from "@/lib/gsap";
 
@@ -53,7 +53,7 @@ export function Hero() {
           preload="metadata"
           aria-hidden
         >
-          <source src={heroVideo.url} type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
         </video>
       </div>
       <div
