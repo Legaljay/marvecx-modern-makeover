@@ -1,0 +1,25 @@
+{
+  "name": "marvecx-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "seed": "tsx scripts/seed.ts"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sanity": "^4.10.0",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@sanity/client": "^7.0.0",
+    "@types/react": "^19.2.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.0"
+  }
+}
