@@ -8,28 +8,26 @@ import { Sectors } from "@/components/site/Sectors";
 import { Events } from "@/components/site/Events";
 import { Team } from "@/components/site/Team";
 import { eventsQueryOptions } from "@/lib/sanity";
+import { SITE, OG_IMAGE, BASE_KEYWORDS, canonical, ogMeta, twitterMeta } from "@/lib/seo";
+
+const PAGE_TITLE = "MARVECX — African Aerospace, Research & Education";
+const PAGE_DESC =
+  "MARVECX is a forward-looking African aerospace company advancing design, research, and education for a sustainable and spacefaring future.";
 
 export const Route = createFileRoute("/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(eventsQueryOptions),
   head: () => ({
     meta: [
-      { title: "MARVECX — African Aerospace, Research & Education" },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
       {
-        name: "description",
-        content:
-          "MARVECX is a forward-looking African aerospace company advancing design, research, and education for a sustainable and spacefaring future.",
+        name: "keywords",
+        content: `${BASE_KEYWORDS}, African spacefaring, multiplanetary, aerospace innovation`,
       },
-      { property: "og:title", content: "MARVECX — African Aerospace" },
-      {
-        property: "og:description",
-        content:
-          "Engineering the multiplanetary future from Africa. Design, research, education, and the ISTC convention series.",
-      },
-      { property: "og:url", content: "https://marvecx-makeover-ai.lovable.app/" },
-      { property: "og:image", content: "https://marvecx-makeover-ai.lovable.app/og-image.jpg" },
-      { property: "twitter:image", content: "https://marvecx-makeover-ai.lovable.app/og-image.jpg" },
+      ...ogMeta({ title: PAGE_TITLE, description: PAGE_DESC, url: SITE, image: OG_IMAGE }),
+      ...twitterMeta({ title: PAGE_TITLE, description: PAGE_DESC, image: OG_IMAGE }),
     ],
-    links: [{ rel: "canonical", href: "https://marvecx-makeover-ai.lovable.app/" }],
+    links: [{ rel: "canonical", href: canonical("/") }],
   }),
   component: Index,
 });

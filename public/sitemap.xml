@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.marvecx.com/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>MARVECX — African Aerospace, Research &amp; Education</image:title>
+    </image:image>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://www.marvecx.com/about</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>About MARVECX Aerospace</image:title>
+    </image:image>
+  </url>
+
+  <!-- Team -->
+  <url>
+    <loc>https://www.marvecx.com/team</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>MARVECX Team</image:title>
+    </image:image>
+  </url>
+
+  <!-- Events index -->
+  <url>
+    <loc>https://www.marvecx.com/events</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>ISTC Events — International Space Technology Convention</image:title>
+    </image:image>
+  </url>
+
+  <!-- ISTC 2026 -->
+  <url>
+    <loc>https://www.marvecx.com/events/istc-2026</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>ISTC 2026 — Emergence</image:title>
+    </image:image>
+  </url>
+
+  <!-- ISTC 2025 -->
+  <url>
+    <loc>https://www.marvecx.com/events/istc-2025</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>ISTC 2025 — Emergence</image:title>
+    </image:image>
+  </url>
+
+  <!-- ISTC 2024 -->
+  <url>
+    <loc>https://www.marvecx.com/events/istc-2024</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>ISTC 2024</image:title>
+    </image:image>
+  </url>
+
+  <!-- ISTC 2023 -->
+  <url>
+    <loc>https://www.marvecx.com/events/istc-2023</loc>
+    <lastmod>2023-08-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>ISTC 2023 — Inaugural Edition</image:title>
+    </image:image>
+  </url>
+
+  <!-- Education Guide -->
+  <url>
+    <loc>https://www.marvecx.com/education/guide</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.marvecx.com/og-image-1200x630.jpg</image:loc>
+      <image:title>Aerospace Engineering Careers &amp; Education in Africa</image:title>
+    </image:image>
+  </url>
+
+</urlset>

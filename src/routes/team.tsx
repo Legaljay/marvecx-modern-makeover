@@ -1,26 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Team } from "@/components/site/Team";
+import { SITE, OG_IMAGE, canonical, ogMeta, twitterMeta } from "@/lib/seo";
+
+const PAGE_TITLE = "Our Team — MARVECX Aerospace";
+const PAGE_DESC =
+  "Meet the MARVECX team — engineers, researchers, and operators building the future of African aerospace. The people behind the mission.";
+const PAGE_URL = canonical("/team");
 
 export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
-      { title: "Team — MARVECX Aerospace" },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
       {
-        name: "description",
+        name: "keywords",
         content:
-          "Meet the MARVECX team — engineers, researchers, and operators building the future of African aerospace.",
+          "MARVECX team, African aerospace engineers, MARVECX Aerospace leadership, aerospace researchers Africa, Marvelours Ayinde, MARVECX crew",
       },
-      { property: "og:title", content: "The MARVECX team" },
-      {
-        property: "og:description",
-        content: "Leadership and crew behind MARVECX Aerospace.",
-      },
-      { property: "og:url", content: "https://marvecx-makeover-ai.lovable.app/team" },
+      ...ogMeta({ title: PAGE_TITLE, description: PAGE_DESC, url: PAGE_URL, image: OG_IMAGE }),
+      ...twitterMeta({ title: PAGE_TITLE, description: PAGE_DESC, image: OG_IMAGE }),
     ],
-    links: [
-      { rel: "canonical", href: "https://marvecx-makeover-ai.lovable.app/team" },
-    ],
+    links: [{ rel: "canonical", href: PAGE_URL }],
     scripts: [
       {
         type: "application/ld+json",
@@ -29,14 +30,55 @@ export const Route = createFileRoute("/team")({
           "@type": "Organization",
           name: "MARVECX",
           alternateName: "MARVECX Aerospace",
-          url: "https://marvecx-makeover-ai.lovable.app",
+          url: SITE,
           member: [
-            { "@type": "Person", name: "Marvelours Ayinde", jobTitle: "Founder & CEO" },
-            { "@type": "Person", name: "Joshua Egbunu", jobTitle: "Tech & Project Lead" },
-            { "@type": "Person", name: "Francis Adedeji", jobTitle: "Research Lead" },
-            { "@type": "Person", name: "Okikijesu Olajide", jobTitle: "Assistant Tech Lead" },
-            { "@type": "Person", name: "Ayobami Adesina", jobTitle: "IT Lead" },
-            { "@type": "Person", name: "Princess Ariel", jobTitle: "Assistant IT & Program Coordinator" },
+            {
+              "@type": "Person",
+              name: "Marvelours Ayinde",
+              jobTitle: "Founder & CEO",
+              worksFor: { "@type": "Organization", name: "MARVECX" },
+            },
+            {
+              "@type": "Person",
+              name: "Joshua Egbunu",
+              jobTitle: "Tech & Project Lead",
+              worksFor: { "@type": "Organization", name: "MARVECX" },
+            },
+            {
+              "@type": "Person",
+              name: "Francis Adedeji",
+              jobTitle: "Research Lead",
+              worksFor: { "@type": "Organization", name: "MARVECX" },
+            },
+            {
+              "@type": "Person",
+              name: "Okikijesu Olajide",
+              jobTitle: "Assistant Tech Lead",
+              worksFor: { "@type": "Organization", name: "MARVECX" },
+            },
+            {
+              "@type": "Person",
+              name: "Ayobami Adesina",
+              jobTitle: "IT Lead",
+              worksFor: { "@type": "Organization", name: "MARVECX" },
+            },
+            {
+              "@type": "Person",
+              name: "Princess Ariel",
+              jobTitle: "Assistant IT & Program Coordinator",
+              worksFor: { "@type": "Organization", name: "MARVECX" },
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+            { "@type": "ListItem", position: 2, name: "Team", item: PAGE_URL },
           ],
         }),
       },

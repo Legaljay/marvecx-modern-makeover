@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { SITE, OG_IMAGE, LOGO, TWITTER_SITE } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -74,14 +75,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#05070f" },
       { name: "author", content: "MARVECX Aerospace" },
+      { name: "robots", content: "index, follow" },
+      {
+        name: "googlebot",
+        content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      },
+      // Default title — child routes override this
+      { title: "MARVECX — African Aerospace, Research & Education" },
+      // Fallback OG/Twitter — child routes override per-page
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "MARVECX" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: TWITTER_SITE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
+      // Full favicon set
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/marvecx-icon-16x16.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/marvecx-icon-32x32.png" },
+      { rel: "icon", type: "image/png", sizes: "48x48", href: "/marvecx-icon-48x48.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/marvecx-icon-180x180.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/marvecx-icon-192x192.png" },
+      { rel: "icon", type: "image/png", sizes: "512x512", href: "/marvecx-icon-512x512.png" },
+      // Fonts
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -95,11 +117,67 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "MARVECX",
-          alternateName: "MARVECX Aerospace",
-          url: "https://marvecx-makeover-ai.lovable.app",
+          name: "MARVECX Aerospace",
+          alternateName: "MARVECX",
+          url: SITE,
+          logo: LOGO,
           description:
-            "MARVECX advances aerospace design, research, and education from Africa for a sustainable and spacefaring future.",
+            "A forward-looking African company committed to advancing aerospace design, research, and education with a deep focus on sustainability and innovation.",
+          foundingLocation: {
+            "@type": "Place",
+            address: {
+              "@type": "PostalAddress",
+              addressCountry: "NG",
+              addressRegion: "Lagos",
+            },
+          },
+          areaServed: [
+            { "@type": "Place", name: "Africa" },
+            { "@type": "Place", name: "Global" },
+          ],
+          industry: "Aerospace Technology",
+          knowsAbout: [
+            "Aerospace Engineering",
+            "Space Technology",
+            "Sustainable Innovation",
+            "STEM Education",
+            "Aerospace Research",
+            "Satellite Technology",
+            "Launch Systems",
+            "Aeronautics",
+            "Drone Technology",
+          ],
+          mission:
+            "To develop world-class aerospace technologies, promote research for a sustainable and multiplanetary future, and empower individuals globally through education, collaboration, and innovation.",
+          slogan: "Advancing Africa's Future in Space",
+          department: [
+            {
+              "@type": "Organization",
+              name: "Education Sector",
+              description:
+                "Focusing on training, outreach, and knowledge development across Africa and the global aerospace community.",
+            },
+            {
+              "@type": "Organization",
+              name: "Research Sector",
+              description: "Set to launch in 2026 to drive new scientific exploration.",
+              foundingDate: "2026",
+            },
+            {
+              "@type": "Organization",
+              name: "Design & Manufacturing Sector",
+              description:
+                "Future sector focused on full-scale aerospace production and launch capability.",
+            },
+          ],
+          subjectOf: {
+            "@type": "WebPage",
+            name: "About MARVECX Aerospace",
+            url: `${SITE}/about`,
+            description:
+              "Learn about MARVECX Aerospace's mission, vision, core values, and future outlook in advancing African aerospace technology.",
+          },
+          sameAs: ["https://x.com/marvecx", "https://www.instagram.com/marvecx"],
         }),
       },
       {
@@ -108,7 +186,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "MARVECX — African Aerospace",
-          url: "https://marvecx-makeover-ai.lovable.app",
+          url: SITE,
+          description:
+            "MARVECX advances aerospace design, research, and education from Africa for a sustainable and spacefaring future.",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: { "@type": "EntryPoint", urlTemplate: `${SITE}/events?q={search_term_string}` },
+            "query-input": "required name=search_term_string",
+          },
         }),
       },
     ],

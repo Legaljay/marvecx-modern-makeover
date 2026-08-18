@@ -5,8 +5,9 @@ import { EventStatusBadge } from "@/components/site/EventStatusBadge";
 import { EventBody } from "@/components/site/EventBody";
 import { useReveal } from "@/hooks/use-gsap";
 import { eventQueryOptions, formatEventDates, type EventDoc } from "@/lib/sanity";
+import { SITE, OG_IMAGE, canonical, ogMeta, twitterMeta } from "@/lib/seo";
 
-const SITE = "https://marvecx-makeover-ai.lovable.app";
+const EVENTS_URL = canonical("/events");
 
 export const Route = createFileRoute("/events/$slug")({
   loader: async ({ context, params }) => {
@@ -16,25 +17,45 @@ export const Route = createFileRoute("/events/$slug")({
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Event unavailable — MARVECX" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [
+          { title: "Event unavailable — MARVECX" },
+          { name: "robots", content: "noindex, nofollow" },
+        ],
+      };
     }
-    const url = `${SITE}/events/${params.slug}`;
-    const description =
-      loaderData.excerpt ?? `${loaderData.title} — an ISTC convention hosted by MARVECX.`;
+    const url = canonical(`/events/${params.slug}`);
+    const description = (
+      loaderData.excerpt ?? `${loaderData.title} — an ISTC convention hosted by MARVECX.`
+    ).slice(0, 158);
+    const image = loaderData.coverImage?.url ?? OG_IMAGE;
+    const eventTitle = `${loaderData.title} — MARVECX`;
+    const eventStatus =
+      loaderData.status === "ongoing"
+        ? "https://schema.org/EventScheduled"
+        : loaderData.status === "open"
+          ? "https://schema.org/EventScheduled"
+          : "https://schema.org/EventCancelled";
+    const keywords = [
+      loaderData.title,
+      loaderData.edition ?? "",
+      loaderData.theme ?? "",
+      "ISTC",
+      "International Space Technology Convention",
+      "MARVECX event",
+      "African space conference",
+      loaderData.location ?? "",
+    ]
+      .filter(Boolean)
+      .join(", ");
+
     return {
       meta: [
-        { title: `${loaderData.title} — MARVECX` },
-        { name: "description", content: description.slice(0, 158) },
-        { property: "og:title", content: loaderData.title },
-        { property: "og:description", content: description.slice(0, 158) },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: url },
-        ...(loaderData.coverImage?.url
-          ? [
-              { property: "og:image", content: loaderData.coverImage.url },
-              { name: "twitter:image", content: loaderData.coverImage.url },
-            ]
-          : []),
+        { title: eventTitle },
+        { name: "description", content: description },
+        { name: "keywords", content: keywords },
+        ...ogMeta({ title: loaderData.title, description, url, image, type: "article" }),
+        ...twitterMeta({ title: loaderData.title, description, image }),
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
@@ -46,16 +67,39 @@ export const Route = createFileRoute("/events/$slug")({
             name: loaderData.title,
             description,
             url,
+            image,
             startDate: loaderData.startDate,
             endDate: loaderData.endDate ?? loaderData.startDate,
-            eventStatus:
-              loaderData.status === "closed"
-                ? "https://schema.org/EventScheduled"
-                : "https://schema.org/EventScheduled",
+            eventStatus,
+            eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
             location: loaderData.location
               ? { "@type": "Place", name: loaderData.location }
               : undefined,
             organizer: { "@type": "Organization", name: "MARVECX", url: SITE },
+            ...(loaderData.speakers && loaderData.speakers.length > 0
+              ? {
+                  performer: loaderData.speakers.map((s) => ({
+                    "@type": "Person",
+                    name: s.name,
+                    jobTitle: s.role,
+                    affiliation: s.organization
+                      ? { "@type": "Organization", name: s.organization }
+                      : undefined,
+                  })),
+                }
+              : {}),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+              { "@type": "ListItem", position: 2, name: "Events", item: EVENTS_URL },
+              { "@type": "ListItem", position: 3, name: loaderData.title, item: url },
+            ],
           }),
         },
       ],
@@ -91,7 +135,6 @@ function EventDetail() {
   const event = data as EventDoc;
   const ref = useReveal([slug]);
 
-
   const keynotes = (event.speakers ?? []).filter((s) => s.keynote);
   const speakers = (event.speakers ?? []).filter((s) => !s.keynote);
   const showRegistration = event.status !== "closed" && Boolean(event.registrationUrl);
@@ -114,7 +157,10 @@ function EventDetail() {
               />
             </>
           ) : (
-            <div className="blueprint-grid blueprint-fade pointer-events-none absolute inset-0" aria-hidden />
+            <div
+              className="blueprint-grid blueprint-fade pointer-events-none absolute inset-0"
+              aria-hidden
+            />
           )}
 
           <div className="relative mx-auto max-w-6xl">
@@ -141,7 +187,10 @@ function EventDetail() {
             )}
 
             {event.excerpt && (
-              <p data-reveal className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/70">
+              <p
+                data-reveal
+                className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/70"
+              >
                 {event.excerpt}
               </p>
             )}
@@ -158,12 +207,16 @@ function EventDetail() {
               </div>
               <div className="bg-background px-5 py-4">
                 <dt className="label-tech">Location</dt>
-                <dd className="mt-2 text-sm text-foreground/85">{event.location ?? "To be announced"}</dd>
+                <dd className="mt-2 text-sm text-foreground/85">
+                  {event.location ?? "To be announced"}
+                </dd>
               </div>
               <div className="bg-background px-5 py-4">
                 <dt className="label-tech">Sessions</dt>
                 <dd className="mt-2 text-sm text-foreground/85">
-                  {event.sessions?.length ? `${event.sessions.length} scheduled` : "Programme pending"}
+                  {event.sessions?.length
+                    ? `${event.sessions.length} scheduled`
+                    : "Programme pending"}
                 </dd>
               </div>
             </dl>
@@ -205,16 +258,15 @@ function EventDetail() {
                   className="flex flex-col gap-2 border-b border-border bg-surface/20 px-5 py-5 last:border-b-0 sm:flex-row sm:items-center sm:gap-6"
                 >
                   <div className="label-tech shrink-0 sm:w-40">
-                    {[s.day, [s.start, s.end].filter(Boolean).join("–")].filter(Boolean).join(" · ") ||
-                      "TBA"}
+                    {[s.day, [s.start, s.end].filter(Boolean).join("–")]
+                      .filter(Boolean)
+                      .join(" · ") || "TBA"}
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-display text-base font-semibold">{s.title}</p>
                     {s.speaker && <p className="mt-1 text-sm text-foreground/60">{s.speaker}</p>}
                   </div>
-                  {s.keynote && (
-                    <span className="label-tech shrink-0 text-accent">Keynote</span>
-                  )}
+                  {s.keynote && <span className="label-tech shrink-0 text-accent">Keynote</span>}
                 </li>
               ))}
             </ol>
@@ -291,8 +343,8 @@ function EventDetail() {
               <div>
                 <h2 className="font-display text-2xl font-semibold">Join {event.title}</h2>
                 <p className="mt-2 text-sm text-foreground/65">
-                  Registration is {event.status === "ongoing" ? "still open" : "now open"} — secure your
-                  place.
+                  Registration is {event.status === "ongoing" ? "still open" : "now open"} — secure
+                  your place.
                 </p>
               </div>
               <a
@@ -326,7 +378,10 @@ function Section({
         <p data-reveal className="label-tech text-primary">
           {eyebrow}
         </p>
-        <h2 data-reveal className="mt-3 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+        <h2
+          data-reveal
+          className="mt-3 font-display text-2xl font-semibold tracking-tight sm:text-3xl"
+        >
           {title}
         </h2>
         <div data-reveal className="mt-9">

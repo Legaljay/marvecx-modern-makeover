@@ -1,5 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
+import { SITE, OG_IMAGE, canonical, ogMeta, twitterMeta } from "@/lib/seo";
+
+const PAGE_TITLE = "Aerospace Engineering Careers & Education in Africa — MARVECX";
+const PAGE_DESC =
+  "A comprehensive guide to aerospace engineering education, top universities, career paths, and opportunities across Africa. From student to space professional.";
+const PAGE_URL = canonical("/education/guide");
+const PAGE_KEYWORDS =
+  "aerospace engineering Africa, aerospace education guide, African aerospace universities, aerospace career Africa, how to become aerospace engineer Africa, South Africa aerospace, Nigeria aerospace, satellite engineering Africa, UAV engineer Africa, STEM Africa, aerospace scholarships Africa, MARVECX education";
 
 const ROADMAP = [
   {
@@ -126,25 +134,48 @@ const RESOURCES = [
 export const Route = createFileRoute("/education/guide")({
   head: () => ({
     meta: [
-      { title: "Aerospace Engineering Careers & Education in Africa — MARVECX" },
-      {
-        name: "description",
-        content:
-          "A comprehensive guide to aerospace engineering education, top universities, career paths, and opportunities across Africa.",
-      },
-      {
-        property: "og:title",
-        content: "Aerospace Engineering Careers & Education in Africa",
-      },
-      {
-        property: "og:description",
-        content:
-          "Discover how to become an aerospace engineer in Africa: universities, career paths, internships, and resources.",
-      },
-      { property: "og:url", content: "https://marvecx-makeover-ai.lovable.app/education/guide" },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { name: "keywords", content: PAGE_KEYWORDS },
+      ...ogMeta({ title: PAGE_TITLE, description: PAGE_DESC, url: PAGE_URL, image: OG_IMAGE }),
+      ...twitterMeta({ title: PAGE_TITLE, description: PAGE_DESC, image: OG_IMAGE }),
     ],
-    links: [
-      { rel: "canonical", href: "https://marvecx-makeover-ai.lovable.app/education/guide" },
+    links: [{ rel: "canonical", href: PAGE_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: PAGE_TITLE,
+          description: PAGE_DESC,
+          url: PAGE_URL,
+          image: OG_IMAGE,
+          author: { "@type": "Organization", name: "MARVECX Aerospace", url: SITE },
+          publisher: {
+            "@type": "Organization",
+            name: "MARVECX Aerospace",
+            logo: { "@type": "ImageObject", url: `${SITE}/marvecx-icon-512x512.png` },
+          },
+          about: [
+            { "@type": "Thing", name: "Aerospace Engineering" },
+            { "@type": "Thing", name: "Engineering Education" },
+            { "@type": "Thing", name: "African Universities" },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+            { "@type": "ListItem", position: 2, name: "Education", item: `${SITE}/education` },
+            { "@type": "ListItem", position: 3, name: "Aerospace Career Guide", item: PAGE_URL },
+          ],
+        }),
+      },
     ],
   }),
   component: EducationGuidePage,
@@ -159,8 +190,8 @@ function EducationGuidePage() {
             Education
           </p>
           <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight sm:text-6xl">
-            Aerospace Engineering{" "}
-            <span className="text-primary">Careers &amp; Education</span> in Africa
+            Aerospace Engineering <span className="text-primary">Careers &amp; Education</span> in
+            Africa
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
             A practical guide for students and professionals who want to build aircraft, satellites,
@@ -181,7 +212,6 @@ function EducationGuidePage() {
             </h2>
           </div>
           <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* vertical connector line on large screens */}
             <div
               className="pointer-events-none absolute top-0 bottom-0 left-1/2 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/10 to-transparent lg:block"
               aria-hidden
@@ -260,7 +290,10 @@ function EducationGuidePage() {
                 key={c.role}
                 className="group relative overflow-hidden rounded-3xl border border-white/5 bg-background/40 p-8 transition-all hover:-translate-y-1 hover:border-white/15"
               >
-                <div className="absolute -top-20 -right-20 h-48 w-48 rounded-full bg-primary/15 blur-3xl opacity-60 transition-opacity group-hover:opacity-100" aria-hidden />
+                <div
+                  className="absolute -top-20 -right-20 h-48 w-48 rounded-full bg-primary/15 blur-3xl opacity-60 transition-opacity group-hover:opacity-100"
+                  aria-hidden
+                />
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-white/30">0{i + 1}</span>
                 </div>
@@ -298,10 +331,13 @@ function EducationGuidePage() {
           <div className="mt-16 text-center">
             <p className="text-white/60">
               Ready to take the next step? Explore the{" "}
-              <Link to="/events" className="text-primary underline underline-offset-4 hover:text-white transition-colors">
+              <Link
+                to="/events"
+                className="text-primary underline underline-offset-4 hover:text-white transition-colors"
+              >
                 ISTC convention
               </Link>{" "}
-              and connect with Africa’s aerospace community.
+              and connect with Africa's aerospace community.
             </p>
           </div>
         </div>
