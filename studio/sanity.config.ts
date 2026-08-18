@@ -1,14 +1,14 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
-import { Rocket } from "lucide-react";
+import { RocketIcon } from "@sanity/icons";
 import { schemaTypes } from "./schemas";
 import { StudioLogo } from "./components/StudioLogo";
 
 export default defineConfig({
   name: "marvecx",
   title: "MARVECX CMS",
-  icon: Rocket,
+  icon: RocketIcon,
   projectId: "fsmhaobl",
   dataset: "production",
 

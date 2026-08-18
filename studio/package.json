@@ -11,6 +11,8 @@
     "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
+    "@sanity/icons": "^3.7.0",
+    "@sanity/vision": "^4.10.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "sanity": "^4.10.0",
