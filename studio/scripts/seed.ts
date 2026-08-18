@@ -67,10 +67,24 @@ const events: SeedEvent[] = [
     edition: "Third Edition",
     theme: "Emergence",
     status: "closed",
-    startDate: "2025-01-01",
+    startDate: "2025-11-01",
     location: "Lagos, Nigeria · Hybrid",
     excerpt:
       "A knowledge series exploring transformative ideas in space exploration, planetary science, robotics, aviation, and next-generation technologies.",
+    registrationUrl: "https://www.marvecx.com",
+  },
+  {
+    _id: "istc-2026",
+    title: "ISTC 2026 — Emergence",
+    slug: "istc-2026",
+    edition: "Fourth Edition",
+    theme: "Emergence",
+    status: "ongoing",
+    startDate: "2026-11-01",
+    location: "Lagos, Nigeria · Hybrid",
+    excerpt:
+      "The fourth edition of the International Space Technology Convention — exploring transformative ideas across space exploration, planetary science, robotics, aviation, and next-generation technologies.",
+    registrationUrl: "https://www.marvecx.com",
   },
 ];
 
