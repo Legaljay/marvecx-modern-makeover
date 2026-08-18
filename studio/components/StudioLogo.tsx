@@ -1,6 +1,6 @@
 /**
  * MARVECX wordmark shown in the Studio navbar.
- * Uses the mark served from /static/favicon.png by the Studio build.
+ * Uses the mark served from /static/favicon.ico by the Studio build.
  */
 export function StudioLogo() {
   return (

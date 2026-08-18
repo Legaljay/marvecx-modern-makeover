@@ -65,7 +65,7 @@ export function Hero() {
       <div className="mx-auto w-full max-w-6xl">
         <p data-hero-eyebrow className="label-tech flex items-center gap-2 text-foreground/70">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent animate-pulse-slow" />
-          African aerospace · ISTC 2025 live
+          African aerospace · ISTC 2026 live
         </p>
 
         <h1 className="mt-6 max-w-4xl font-display text-[2.6rem] font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">

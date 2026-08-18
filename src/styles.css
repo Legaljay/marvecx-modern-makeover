@@ -6,6 +6,11 @@
 
 /* MARVECX design system — precision aerospace: deep space navy, instrument blue, signal red */
 
+@font-face {
+  font-family: "Nasalization";
+  src: local("NasalizationRg"), url('./assets/fonts/NasalizationRg.otf');
+}
+
 @theme inline {
   --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;

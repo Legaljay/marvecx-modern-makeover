@@ -1,17 +1,22 @@
 import { useReveal } from "@/hooks/use-gsap";
 import { SectionHeading } from "./SectionHeading";
 
+import imgMarvelours from "@/assets/team-photos/MarveloursOAyinde_.png";
+import imgJoshua from "@/assets/team-photos/JoshuaOjochegbeEgbunu.png";
+import imgFrancis from "@/assets/team-photos/AdedejiFrancisAyomide.jpg";
+import imgOkikijesu from "@/assets/team-photos/OkikijesuOlajide.jpg";
+import imgAyobami from "@/assets/team-photos/AyobamiBAdesina.png";
+import imgPrincess from "@/assets/team-photos/PrincessNlemogu.png";
+import imgMoses from "@/assets/team-photos/BarristerMosesOlunlade.png";
+
 const TEAM = [
-  { name: "Marvelours Ayinde", role: "Founder & CEO", img: "https://www.marvecx.com/001cini.jpeg" },
-  { name: "Joshua Egbunu", role: "Tech & Project Lead", img: "https://www.marvecx.com/002cini.jpeg" },
-  { name: "Francis Adedeji", role: "Research Lead", img: "https://www.marvecx.com/0005cini.jpeg" },
-  { name: "Okikijesu Olajide", role: "Assistant Tech Lead", img: "https://www.marvecx.com/004cini.jpeg" },
-  { name: "Ayobami Adesina", role: "IT Lead", img: "https://www.marvecx.com/DigitalPhoto_Ayobami.png" },
-  {
-    name: "Princess Ariel",
-    role: "Assistant IT & Program Coordinator",
-    img: "https://www.marvecx.com/003cin.png",
-  },
+  { name: "Marvelours Ayinde", role: "Founder & CEO", img: imgMarvelours },
+  { name: "Joshua Egbunu", role: "Chief Project Officer", img: imgJoshua },
+  { name: "Francis Adedeji", role: "Chief Research Officer", img: imgFrancis },
+  { name: "Okikijesu Olajide", role: "Chief Program Officer", img: imgOkikijesu },
+  { name: "Ayobami Adesina", role: "Chief Information Technology Officer", img: imgAyobami },
+  { name: "Princess Ariel", role: "Chief Program Manager", img: imgPrincess },
+  { name: "Moses Olunlade", role: "Chief Legal Officer", img: imgMoses },
 ] as const;
 
 export function Team({ heading = true, limit }: { heading?: boolean; limit?: number }) {

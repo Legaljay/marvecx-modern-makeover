@@ -10,9 +10,15 @@ export function Footer() {
               aria-hidden
               className="grid h-8 w-8 place-items-center rounded-sm border border-primary/50 bg-primary/15 font-display text-sm font-semibold text-primary"
             >
-              M
+              <img
+              src="/logo1121.png"
+              alt="MARVECX"
+              width={22}
+              height={22}
+              style={{ display: "block" }}
+            />
             </span>
-            <span className="font-display text-lg font-semibold uppercase tracking-[0.14em]">
+            <span className="font-[Nasalization] text-lg font-semibold uppercase tracking-[0.14em]">
               Marvecx
             </span>
           </div>

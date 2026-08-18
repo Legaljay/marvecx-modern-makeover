@@ -29,9 +29,8 @@ export function SiteNav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? "border-b border-border bg-background/85 backdrop-blur-xl" : "border-b border-transparent"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${scrolled || open ? "border-b border-border bg-background/85 backdrop-blur-xl" : "border-b border-transparent"
+        }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link to="/" className="flex items-center gap-2.5">
@@ -39,9 +38,15 @@ export function SiteNav() {
             aria-hidden
             className="grid h-7 w-7 place-items-center rounded-sm border border-primary/50 bg-primary/15 font-display text-xs font-semibold text-primary"
           >
-            M
+            <img
+              src="/logo1121.png"
+              alt="MARVECX"
+              width={22}
+              height={22}
+              style={{ display: "block" }}
+            />
           </span>
-          <span className="font-display text-base font-semibold uppercase tracking-[0.14em]">
+          <span className="font-[Nasalization] text-base font-semibold uppercase tracking-[0.14em]">
             Marvecx
           </span>
         </Link>
@@ -51,11 +56,10 @@ export function SiteNav() {
             <Link
               key={item.to}
               to={item.to}
-              className={`relative py-1 text-sm transition-colors ${
-                isActive(item.to)
+              className={`relative py-1 text-sm transition-colors ${isActive(item.to)
                   ? "text-foreground"
                   : "text-foreground/55 hover:text-foreground"
-              }`}
+                }`}
             >
               {item.label}
               {isActive(item.to) && (
@@ -67,7 +71,7 @@ export function SiteNav() {
             to="/events"
             className="rounded-md border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
           >
-            ISTC 2025
+            ISTC 2026
           </Link>
         </div>
 
@@ -88,9 +92,8 @@ export function SiteNav() {
             <Link
               key={item.to}
               to={item.to}
-              className={`block border-b border-border/60 py-3.5 text-sm ${
-                isActive(item.to) ? "text-primary" : "text-foreground/75"
-              }`}
+              className={`block border-b border-border/60 py-3.5 text-sm ${isActive(item.to) ? "text-primary" : "text-foreground/75"
+                }`}
             >
               {item.label}
             </Link>
