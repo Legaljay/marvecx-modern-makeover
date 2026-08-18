@@ -16,7 +16,7 @@ const components: PortableTextComponents = {
       </blockquote>
     ),
     normal: ({ children }) => (
-      <p className="mt-5 text-base leading-relaxed text-foreground/75">{children}</p>
+      <p className="mt-5 text-base text-justify leading-relaxed text-foreground/75">{children}</p>
     ),
   },
   list: {
