@@ -91,6 +91,7 @@ function EventDetail() {
   const event = data as EventDoc;
   const ref = useReveal([slug]);
 
+
   const keynotes = (event.speakers ?? []).filter((s) => s.keynote);
   const speakers = (event.speakers ?? []).filter((s) => !s.keynote);
   const showRegistration = event.status !== "closed" && Boolean(event.registrationUrl);
@@ -233,7 +234,7 @@ function EventDetail() {
 
         {/* Body */}
         {(event.body?.length ?? 0) > 0 && (
-          <Section title="Full write-up" eyebrow="The record">
+          <Section title="Overview" eyebrow="The record">
             <EventBody value={event.body!} />
           </Section>
         )}

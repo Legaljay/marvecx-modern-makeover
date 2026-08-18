@@ -2,22 +2,26 @@
   "name": "marvecx-studio",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "sanity dev",
+    "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
-    "@sanity/vision": "^3.64.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sanity": "^3.64.0",
-    "styled-components": "^6.1.13"
+    "@sanity/icons": "^3.7.0",
+    "@sanity/vision": "^4.10.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sanity": "^4.10.0",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^4.0.0",
-    "@types/react": "^18.3.1",
-    "typescript": "^5.5.4"
+    "@sanity/client": "^7.0.0",
+    "@types/react": "^19.2.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.0"
   }
 }

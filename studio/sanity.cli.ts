@@ -6,8 +6,10 @@ export default defineCliConfig({
     dataset: "production",
   },
   /**
-   * The studio will be hosted at https://fsmhaobl.sanity.studio
-   * You can set a custom studioHost name here (must be globally unique on sanity.studio).
+   * Used by `npm run deploy` (Sanity-hosted studio).
+   * Result: https://marvecx.sanity.studio
+   * For studio.marvecx.com, see README.md → "Custom subdomain".
    */
   studioHost: "marvecx",
+  deployment: { autoUpdates: true },
 });
