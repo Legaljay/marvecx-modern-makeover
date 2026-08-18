@@ -11,5 +11,5 @@ export default defineCliConfig({
    * For studio.marvecx.com, see README.md → "Custom subdomain".
    */
   studioHost: "marvecx",
-  autoUpdates: true,
+  deployment: { autoUpdates: true },
 });
