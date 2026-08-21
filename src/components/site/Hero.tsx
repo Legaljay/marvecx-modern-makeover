@@ -94,7 +94,7 @@ export function Hero() {
             to="/events"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Explore ISTC 2025
+            Explore ISTC
             <span aria-hidden>→</span>
           </Link>
           <Link
@@ -118,3 +118,5 @@ export function Hero() {
     </section>
   );
 }
+
+
