@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Facebook, Instagram, Linkedin, X, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -26,6 +27,63 @@ export function Footer() {
             A forward-looking African aerospace company advancing design, research, and education
             for a sustainable and spacefaring future.
           </p>
+          <ul className="mt-5 flex flex-wrap gap-4 text-foreground/55">
+            <li>
+              <a
+                href="https://x.com/marvecx?t=BpFIdBmM0Aq807JFt0-fhg&s=09"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MARVECX on X"
+                className="transition-colors hover:text-primary"
+              >
+                <X/>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/marvecx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MARVECX on LinkedIn"
+                className="transition-colors hover:text-primary"
+              >
+                <Linkedin/>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/marvecx?igsh=MTR1eTV1dzg5a2V5Zw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MARVECX on Instagram"
+                className="transition-colors hover:text-primary"
+              >
+                <Instagram/>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/share/1AEZJ9wubx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MARVECX on Facebook"
+                className="transition-colors hover:text-primary"
+              >
+                <Facebook/>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://youtube.com/@marvecx1"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MARVECX on YouTube"
+                className="transition-colors hover:text-primary"
+              >
+                <Youtube/>
+              </a>
+            </li>
+          </ul>
         </div>
 
         <div>
@@ -80,63 +138,6 @@ export function Footer() {
           <p className="mt-3 text-xs text-foreground/45">
             Quarterly updates on research, programmes, and ISTC.
           </p>
-          <ul className="mt-5 flex flex-wrap gap-4 text-foreground/55">
-            <li>
-              <a
-                href="https://x.com/marvecx?t=BpFIdBmM0Aq807JFt0-fhg&s=09"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MARVECX on X"
-                className="transition-colors hover:text-primary"
-              >
-                X
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/marvecx/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MARVECX on LinkedIn"
-                className="transition-colors hover:text-primary"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/marvecx?igsh=MTR1eTV1dzg5a2V5Zw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MARVECX on Instagram"
-                className="transition-colors hover:text-primary"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/share/1AEZJ9wubx/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MARVECX on Facebook"
-                className="transition-colors hover:text-primary"
-              >
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://youtube.com/@marvecx1"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="MARVECX on YouTube"
-                className="transition-colors hover:text-primary"
-              >
-                YouTube
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
 
@@ -147,3 +148,5 @@ export function Footer() {
     </footer>
   );
 }
+
+
