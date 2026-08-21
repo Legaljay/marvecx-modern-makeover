@@ -6,7 +6,7 @@ export function MarvecxIcon() {
       alt="Marvecx"
       width={25}
       height={25}
-      style={{ width: "1em", height: "1em", objectFit: "contain" }}
+      style={{ width: "1.5em", height: "1.5em", objectFit: "contain" }}
     />
   );
 }
