@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, X, Youtube } from "lucide-react";
+import XIcon from "./XIcon";
 
 export function Footer() {
   return (
@@ -36,7 +37,7 @@ export function Footer() {
                 aria-label="MARVECX on X"
                 className="transition-colors hover:text-primary"
               >
-                <X/>
+                <XIcon/>
               </a>
             </li>
             <li>
