@@ -6,7 +6,7 @@ export function StudioLogo() {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
       <img
-        src="/static/favicon.ico"
+        src="/static/favicon.svg"
         alt="MARVECX"
         width={22}
         height={22}

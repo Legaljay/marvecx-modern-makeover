@@ -4,11 +4,12 @@ import { visionTool } from "@sanity/vision";
 import { RocketIcon } from "@sanity/icons";
 import { schemaTypes } from "./schemas";
 import { StudioLogo } from "./components/StudioLogo";
+import { MarvecxIcon } from "./components/MarvecxIcon";
 
 export default defineConfig({
   name: "marvecx",
   title: "MARVECX CMS",
-  icon: RocketIcon,
+  icon: MarvecxIcon,
   projectId: "fsmhaobl",
   dataset: "production",
 
